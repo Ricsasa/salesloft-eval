@@ -1,0 +1,22 @@
+{
+  "name": "salesloft-backend",
+  "version": "1.0.0",
+  "description": "Salesloft evaluation backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.16.4",
+    "express-graphql": "^0.6.12",
+    "graphql": "^14.0.2"
+  },
+  "keywords": [
+    "salesloft",
+    "evaluation"
+  ],
+  "author": "Ricardo Sanchez <ricsasa201@gmail.com>",
+  "license": "ISC"
+}
