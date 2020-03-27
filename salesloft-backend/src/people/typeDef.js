@@ -21,8 +21,8 @@ const peopleType = new GraphQLObjectType({
   }
 });
 
-exports.peopleList = new GraphQLObjectType({
-  name: 'peopleList',
+const metadata = new GraphQLObjectType({
+  name: 'metadata',
   fields: () => {
     return {
       per_page: { type: GraphQLInt },
@@ -31,6 +31,15 @@ exports.peopleList = new GraphQLObjectType({
       prev_page: { type: GraphQLInt },
       total_pages: { type: GraphQLInt },
       total_count: { type: GraphQLInt },
+    }
+  }
+});
+
+exports.peopleList = new GraphQLObjectType({
+  name: 'peopleList',
+  fields: () => {
+    return {
+      metadata: { type: metadata},
       people: { type: new GraphQLList(peopleType) }
     }
   }

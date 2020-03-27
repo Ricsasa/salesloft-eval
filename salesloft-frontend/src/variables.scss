@@ -1,0 +1,28 @@
+//colors
+$brand-color: #1B72B1;
+$base-color: #1997DE;
+
+$divider-color: lighten(#838991, 40);
+
+$base-text-color: darken(#838991, 20);
+$light-text-color: lighten(#838991, 40);
+
+//text size
+$text-base-size: 1em;
+$text-scale-ratio: 1.5;
+
+$text-sm: calc(1em / #{$text-scale-ratio});
+$text-md: calc(1em * #{$text-scale-ratio});
+$text-lg: calc(1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} );
+
+//spacing 
+$space-sm: .25em;
+$space-md: 1em;
+$space-lg: 2em;
+$space-xl: 3.25em;
+
+@mixin grid-system {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: $space-md;
+}

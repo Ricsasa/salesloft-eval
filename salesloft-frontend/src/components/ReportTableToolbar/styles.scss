@@ -1,0 +1,35 @@
+@import "../../variables";
+
+.report-table-toolbar {
+  @include grid-system;
+  font-size: $text-sm;
+  border-top: 1px solid $divider-color;
+  border-bottom: 1px solid $divider-color;
+  padding: 10px 0;
+
+  .pages-selector-container {
+    align-self: center;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    button {
+      font-size: $text-md;
+    }
+    .disabled {
+      color: white;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  .per-page-selector-container {
+    align-self: center;
+    grid-column-start: 9;
+    grid-column-end: end;
+    justify-self: end;
+    .selected {
+      color: $brand-color;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}

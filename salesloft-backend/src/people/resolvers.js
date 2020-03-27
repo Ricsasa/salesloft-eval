@@ -6,9 +6,9 @@ exports.peopleResolver = async (_, args) => {
     const {
       data: { data, metadata }
     } = await clientAPI.get(`people?per_page=${perPage}&page=${page}&include_paging_counts=true`);
-    
+
     return {
-      ...metadata.paging,
+      metadata: { ...metadata.paging },
       people: data
     };
   } catch (e) {

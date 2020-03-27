@@ -1,0 +1,11 @@
+@import '../../variables';
+
+main {
+  @include grid-system;
+  margin-top: $space-lg;
+  
+  .wrapper {
+    grid-column-start: 2;
+    grid-column-end: 12;
+  }
+}

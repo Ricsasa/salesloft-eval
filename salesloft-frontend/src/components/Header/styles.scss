@@ -1,0 +1,41 @@
+@import '../../variables';
+
+header {
+  color: $light-text-color;
+  @include grid-system;
+  background: linear-gradient(to right, $brand-color 30%, $base-color 100%);
+  
+  .title-section {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+
+  .author-section {
+    border-left: 1px solid white;
+    padding-left: $space-md;
+    align-self: center;
+    grid-column-start: 5;
+    grid-column-end: 7;
+  }
+
+  .links-section {
+    border-left: 1px solid white;
+    padding-left: $space-md;
+    grid-column-start: 10;
+    grid-column-end: 12;
+    align-self: center;
+    span {
+      font-size: $text-md;
+      margin: $space-md;
+      a {
+        text-decoration: none;
+        &:visited {
+          color: $light-text-color;
+        }
+        &:hover {
+          color: $base-text-color;
+        }
+      }
+    }
+  }
+}
