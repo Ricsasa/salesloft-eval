@@ -1,11 +1,11 @@
 version: '2'
 services:
-  #ui:
-   # build: ./salesloft-frontend
-    #ports:
-    #  - '80:80'
-    #depends_on:
-    #  - api
+  ui:
+    build: ./salesloft-frontend
+    ports:
+      - '80:80'
+    depends_on:
+      - api
   api:
     build: ./salesloft-backend
     ports:
