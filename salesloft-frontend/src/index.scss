@@ -51,4 +51,7 @@ button {
   &:hover {
     color: invert($base-text-color);
   }
+  & > * {
+    pointer-events: none;
+  }
 }
