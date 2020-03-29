@@ -21,7 +21,7 @@
 - Jest and Enzyme for testing and rendering
 ---
 ## Running Project 
-- Make you you have Docker up and running.
+- Make sure you have Docker up and running.
 - Add the env var for API Key with the command ```export API_KEY=<API_KEY>```.
 - First time executions, run the command ```docker-compose build```.
 - Command ```docker-compose up``` to start the project.
