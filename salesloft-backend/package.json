@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage --forceExit --no-watchman",
+    "test:watch": "jest --watch --coverage"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -18,6 +19,25 @@
     "salesloft",
     "evaluation"
   ],
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "./dist"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ]
+  },
   "author": "Ricardo Sanchez <ricsasa201@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "graphql-tag": "^2.10.3",
+    "graphql-tools": "^4.0.7",
+    "jest": "^25.2.3",
+    "jest-cli": "^25.2.3",
+    "nock": "^12.0.3"
+  }
 }

@@ -1,0 +1,70 @@
+@import "../../../variables";
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 50000;
+
+  .modal {
+    @include grid-system;
+    grid-template-rows: repeat(6, [row-start] 1fr);
+    position: fixed;
+    background: white;
+    width: 60%;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: $space-md;
+
+    &-title {
+      grid-column-start: 1;
+      grid-column-end: 12;
+      border-bottom: 1px solid $divider-color;
+    }
+
+    &-button {
+      border-bottom: 1px solid $divider-color;
+      grid-column-start: 12;
+      justify-self: end;
+    }
+
+    &-content {
+      grid-column-start: 1;
+      grid-column-end: 13;
+      grid-row-start: 2;
+      grid-row-end: 6;
+    }
+
+    &-table-fill {
+      max-height: 100%;
+      overflow-y: scroll;
+    }
+    
+    &-footer {
+      align-self: center;
+      border-top: 1px solid $divider-color;
+      grid-column-start: 1;
+      grid-column-end: 13;
+      grid-row-start: 6;
+      justify-self: end;
+
+      * {
+        justify-self: end;
+      }
+    }
+  }
+}
+
+.modal .display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+

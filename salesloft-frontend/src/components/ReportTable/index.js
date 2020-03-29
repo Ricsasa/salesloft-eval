@@ -1,6 +1,7 @@
 import React from 'react';
-import { LoadingIcon } from '../Utils';
-import './styles.scss';
+import PropTypes from 'prop-types';
+
+import { LoadingIcon, Table } from '../Utils';
 
 const ReportTable = ({ loading, people }) => {
   let tableBody = null;
@@ -17,14 +18,14 @@ const ReportTable = ({ loading, people }) => {
     );
   } else {
     tableBody =
-      people.map(person =>
+      people.map((person) => (
         <ReportTableRow {...person}
-          key={person.id} />
-      );
+          key={person.id}
+        />));
   }
 
   return (
-    <table>
+    <Table>
       <thead>
         <tr>
           <th>Display Name</th>
@@ -35,24 +36,31 @@ const ReportTable = ({ loading, people }) => {
       <tbody>
         {tableBody}
       </tbody>
-    </table>
-  )
+    </Table>
+  );
 };
 
-const ReportTableRow = (person) => {
-  return (
-    <tr>
-      <td className="truncate">
-        {person.display_name}
-      </td>
-      <td className="truncate">
-        {person.email_address}
-      </td>
-      <td className="truncate">
-        {person.title}
-      </td>
-    </tr>
-  );
+export const ReportTableRow = (person) => (
+  <tr>
+    <td className="truncate">
+      {person.display_name}
+    </td>
+    <td className="truncate">
+      {person.email_address}
+    </td>
+    <td className="truncate">
+      {person.title}
+    </td>
+  </tr>
+);
+
+ReportTable.propTypes = {
+  loading: PropTypes.bool,
+  people: PropTypes.array,
+};
+
+ReportTableRow.propTyes = {
+  person: PropTypes.object,
 };
 
 export default ReportTable;

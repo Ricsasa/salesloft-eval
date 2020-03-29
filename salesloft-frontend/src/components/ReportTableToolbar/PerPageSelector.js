@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PerPageSelector = ({ loading, metadata, changePerPage }) => {
   if (loading) {
@@ -14,16 +15,16 @@ const PerPageSelector = ({ loading, metadata, changePerPage }) => {
   return (
     <div className="per-page-selector-container">
       Results per page:
-      <PerPageButton perPage={per_page} value={25} changePerPage={changePerPage}/> / 
-      <PerPageButton perPage={per_page} value={50} changePerPage={changePerPage}/> / 
-      <PerPageButton perPage={per_page} value={100} changePerPage={changePerPage}/>
+      <PerPageButton perPage={per_page} value={25} changePerPage={changePerPage} /> /
+      <PerPageButton perPage={per_page} value={50} changePerPage={changePerPage} /> /
+      <PerPageButton perPage={per_page} value={100} changePerPage={changePerPage} />
     </div>
   );
 };
 
-const PerPageButton = ({ perPage, value, changePerPage }) => {
+export const PerPageButton = ({ perPage, value, changePerPage }) => {
   const clickHandler = (e) => {
-    const { target: {value}} = e;
+    const { target: { value } } = e;
     changePerPage(parseInt(value));
   };
 
@@ -31,11 +32,18 @@ const PerPageButton = ({ perPage, value, changePerPage }) => {
     <button
       className={`${perPage === value ? 'selected' : ''}`}
       onClick={clickHandler}
+      type="button"
       value={value}
     >
       {value}
     </button>
   );
+};
+
+PerPageSelector.propTypes = {
+  loading: PropTypes.bool,
+  metadata: PropTypes.object,
+  changePerPage: PropTypes.func,
 };
 
 export default PerPageSelector;

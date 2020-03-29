@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+
 import PagesSelector from './PagesSelector';
 import PerPageSelector from './PerPageSelector';
 

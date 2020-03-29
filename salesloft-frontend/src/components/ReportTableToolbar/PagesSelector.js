@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,9 +10,9 @@ const DECREMENT = 'decrement';
 const PagesSelector = ({ loading, metadata, changePage }) => {
   if (loading) {
     return (
-      <>
+      <div className="pages-selector-container">
         Loading...
-      </>
+      </div>
     );
   }
 
@@ -28,6 +30,7 @@ const PagesSelector = ({ loading, metadata, changePage }) => {
         className={`${!prev_page ? 'disabled' : ''}`}
         data-increment={DECREMENT}
         onClick={clickHandler}
+        type="button"
         value={current_page}
       >
         <FontAwesomeIcon icon={faChevronCircleLeft} />
@@ -43,8 +46,14 @@ const PagesSelector = ({ loading, metadata, changePage }) => {
       >
         <FontAwesomeIcon icon={faChevronCircleRight} />
       </button>
-    </div >
+    </div>
   );
+};
+
+PagesSelector.propTypes = {
+  loading: PropTypes.bool,
+  metadata: PropTypes.object,
+  changePage: PropTypes.func,
 };
 
 export default PagesSelector;

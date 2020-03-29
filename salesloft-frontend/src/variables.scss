@@ -26,3 +26,17 @@ $space-xl: 3.25em;
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-gap: $space-md;
 }
+
+@mixin grid-system-responsive {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 70% 30%; 
+  grid-gap: 0;
+}
+
+@mixin grid-system-responsive-toolbar {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, [row-start] 1fr);
+  grid-gap: $space-md;
+}

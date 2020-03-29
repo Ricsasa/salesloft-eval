@@ -1,23 +1,22 @@
 import React from 'react';
-import { Card } from '../Utils';
 
-import ReportContainer from '../ReportContainer';
+import { Card } from '../Utils';
+import ButtonSection from '../ButtonSection';
+import ReportSection from '../ReportSection';
 
 import './styles.scss';
 
-const Main = () => {
-  return (
-    <main>
-      <div className="wrapper">
-        <Card>
-          <h1>Texto</h1>
-        </Card>
-        <Card>
-          <ReportContainer />
-        </Card>
-      </div>
-    </main>
-  );
-};
+const Main = () => (
+  <main>
+    <div className="wrapper">
+      <Card>
+        <ButtonSection />
+      </Card>
+      <Card>
+        <ReportSection />
+      </Card>
+    </div>
+  </main>
+);
 
 export default Main;

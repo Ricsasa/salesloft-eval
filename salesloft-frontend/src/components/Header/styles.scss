@@ -1,17 +1,19 @@
-@import '../../variables';
+@import "../../variables";
+
+$border: 1px solid white;
 
 header {
   color: $light-text-color;
   @include grid-system;
   background: linear-gradient(to right, $brand-color 30%, $base-color 100%);
-  
+
   .title-section {
     grid-column-start: 2;
     grid-column-end: 5;
   }
 
   .author-section {
-    border-left: 1px solid white;
+    border-left: $border;
     padding-left: $space-md;
     align-self: center;
     grid-column-start: 5;
@@ -19,7 +21,7 @@ header {
   }
 
   .links-section {
-    border-left: 1px solid white;
+    border-left: $border;
     padding-left: $space-md;
     grid-column-start: 10;
     grid-column-end: 12;
@@ -36,6 +38,37 @@ header {
           color: $base-text-color;
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: 959px) {
+  header {
+    @include grid-system-responsive;
+
+    .title-section {
+      padding-left: 1em;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .author-section {
+      align-self: start;
+      border-left: none;
+      border-top: $border;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+    }
+
+    .links-section {
+      align-self: start;
+      border-left: none;
+      padding-top: 1em;
+      border-top: $border;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
     }
   }
 }

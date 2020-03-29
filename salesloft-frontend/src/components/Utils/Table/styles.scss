@@ -1,9 +1,7 @@
-@import "../../variables";
+@import "../../../variables";
 
 table {
   border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
   margin: 0 auto;
   position: relative;
   table-layout: fixed;
@@ -11,18 +9,18 @@ table {
   thead {
     tr {
       th {
-        height: 60px;
+        height: $space-xl;
         background: $base-color;
         color: $light-text-color;
         position: sticky;
         top: 0;
-        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+        width: 100%;
       }
     }
   }
   tbody {
     tr {
-      height: 50px;
+      height: $space-xl;
       &:nth-child(even) {
         background-color: #f5f5f5;
       }
@@ -38,6 +36,21 @@ table {
           margin: $space-xl;
         }
       }
+    }
+  }
+}
+
+.compact {
+  thead {
+    tr {
+      th {
+        height: $space-lg;
+      }
+    }
+  }
+  tbody {
+    tr {
+      height: $space-lg;
     }
   }
 }

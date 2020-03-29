@@ -40,3 +40,30 @@
     }
   }
 }
+
+
+@media all and (max-width: 480px) {
+  .report-table-toolbar {
+    @include grid-system-responsive-toolbar;
+
+    .pages-selector-container {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      grid-column-end: end;
+      justify-self: center;
+    }
+
+    .total-results-container {
+      grid-row-start: 2;
+      grid-column-start: 1;
+      grid-column-end: end;
+    }
+
+    .per-page-selector-container {
+      grid-row-start: 3;
+      grid-column-start: 1;
+      grid-column-end: end;
+      justify-self: center;
+    }
+  }
+}
